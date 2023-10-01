@@ -93,8 +93,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = dimmer } },
 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = brighter } },
 	{ WINKEY,                       XK_w,      spawn,          {.v = browser } },
-	// { WINKEY,                       XK_s,      spawn,          SHCMD("spotify") },
-	// { WINKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
+	{ WINKEY,                       XK_s,      spawn,          SHCMD("spotify") },
+	{ WINKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
