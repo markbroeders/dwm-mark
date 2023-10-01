@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Kitty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -69,9 +69,9 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-static const char *up_vol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%",   NULL };
-static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%",   NULL };
-static const char *mute_vol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
+static const char *up_vol[]   = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%+",   NULL };
+static const char *down_vol[] = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%-",   NULL };
+static const char *mute_vol[] = { "wpctl", "set-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 
 static const char *brighter[] = { "brightnessctl", "set", "10%+", NULL };
 static const char *dimmer[]   = { "brightnessctl", "set", "10%-", NULL };
@@ -82,8 +82,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
-static const char *obsidian[] = { "flatpak", "run", "md.obsidian.Obsidian", NULL };
-static const char *spotify[] = { "flatpak", "run", "com.spotify.Client", NULL };
+// static const char *obsidian[] = { "flatpak", "run", "md.obsidian.Obsidian", NULL };
+// static const char *spotify[] = { "flatpak", "run", "com.spotify.Client", NULL };
 static const char *browser[] = { "firefox", NULL };
 
 static const Key keys[] = {
@@ -93,8 +93,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = dimmer } },
 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = brighter } },
 	{ WINKEY,                       XK_w,      spawn,          {.v = browser } },
-	{ WINKEY,                       XK_s,      spawn,          {.v = spotify } },
-	{ WINKEY,                       XK_o,      spawn,          {.v = obsidian } },
+	// { WINKEY,                       XK_s,      spawn,          SHCMD("spotify") },
+	// { WINKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
