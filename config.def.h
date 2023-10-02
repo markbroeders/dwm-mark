@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Kitty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Kitty",   NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -95,6 +95,7 @@ static const Key keys[] = {
 	{ WINKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ WINKEY,                       XK_s,      spawn,          SHCMD("spotify") },
 	{ WINKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
+	{ WINKEY,                       XK_e,      spawn,          SHCMD("thunar") },
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
