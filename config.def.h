@@ -96,6 +96,7 @@ static const Key keys[] = {
 	{ WINKEY,                       XK_s,      spawn,          SHCMD("spotify") },
 	{ WINKEY,                       XK_o,      spawn,          SHCMD("obsidian") },
 	{ WINKEY,                       XK_e,      spawn,          SHCMD("thunar") },
+	{ WINKEY,                       XK_l,      spawn,          SHCMD("i3lock") },
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
